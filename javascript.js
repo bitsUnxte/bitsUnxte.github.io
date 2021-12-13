@@ -1,5 +1,5 @@
 function init() {
-Tabletop.init( { key: ‘198HS_8FJbZhASXbJ7hfJV-iux563hd6gg7joNYJ6X9k’,
+Tabletop.init( { key: ‘https://docs.google.com/spreadsheets/d/1W35xqmbHF5m9IRWd68JElKUYUlRWvuZi_TuzLlNkWRc/edit?usp=sharing’,
 callback: showInfo,
 simpleSheet: true } )
 }
@@ -19,3 +19,5 @@ data[i].body +
 }
 }
 window.addEventListener(‘DOMContentLoaded’, init)
+
+
