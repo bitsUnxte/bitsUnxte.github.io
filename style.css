@@ -1,0 +1,7 @@
+.card{
+  float:left;
+  widtch:32%;
+  margin:5px;
+  text-align:center;
+  box-shadow:0 4px 8px #01418b;
+}
