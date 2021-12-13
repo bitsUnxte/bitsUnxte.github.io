@@ -3,11 +3,7 @@
 <html>
     
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>About Me|Vaibhav Devnani's Blog</title>
-    <link rel="icon" href="/images/title-removebg-preview-min.png" type="image/icon type">
+    
 </head>
 
 
@@ -15,5 +11,16 @@
 <div class=”post”>
 </div>
 </body>
-    
-</html> 
+for (var i = 0; i < data.length; i++) {
+$(‘.post’).append(
+‘<div class=”article” style=”background-image: url( ‘ +
+data[i].img + ‘.jpg)”>’ +
+‘<div class=”text”>’ +
+‘<h1>’ + data[i].title + ‘</h1>’+
+data[i].body +
+‘</div> ‘ + ‘<div class=”meta-info”>’ + ‘<img src =”’ + data[i].img + ‘.jpg”>’+
+‘<div class=”date”>’ + data[i].date + ‘</div>’ +
+‘</div>’ +
+‘</div>’);
+}
+
