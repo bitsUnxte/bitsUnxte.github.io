@@ -1,26 +1,44 @@
-
 <!DOCTYPE html>
-<html>
-    
-<head>
-    
-</head>
-
-
-<body>
-<div class=”post”>
-    for (var i = 0; i < data.length; i++) {
-$(‘.post’).append(
-‘<div class=”article” style=”background-image: url( ‘ +
-data[i].img + ‘.jpg)”>’ +
-‘<div class=”text”>’ +
-‘<h1>’ + data[i].title + ‘</h1>’+
-data[i].body +
-‘</div> ‘ + ‘<div class=”meta-info”>’ + ‘<img src =”’ + data[i].img + ‘.jpg”>’+
-‘<div class=”date”>’ + data[i].date + ‘</div>’ +
-‘</div>’ +
-‘</div>’);
-}
-</div>
-</body>
-</html>
+<html lang='en'>
+    <head>
+        <title>bitsUnxte</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+         <link
+            id="favicon"
+            rel="icon"
+            href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bits-pilani.ac.in%2Fgoa%2FbiologicalScience%2FbiologicalScience&psig=AOvVaw0NqNGUDJrkLgHsAWkrdhcu&ust=1639491843885000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOi7jpr94PQCFQAAAAAdAAAAABAI"
+            type="image/x-icon"
+         />
+        <link rel="stylesheet" href="/style.css">
+    </head>            
+    <body>
+        <h1 style='text-align:center'>Welcome to bitsUnxte</h1>
+        <div class='container'>
+        </div>
+        <script type='text/javascript' src='https://cdnjs.cloudfare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+        <script type='text/javascript' src='https://cdn.tutorialjinni.com/tabletop.js/1.6.2/tabletop.js'></script>
+        <script>
+            function init(){
+                Tabletop.init({key:'https://docs.google.com/spreadsheets/d/1W35xqmbHF5m9IRWd68JElKUYUlRWvuZi_TuzLlNkWRc/edit?usp=sharing',
+                callback:showInfo,
+                simplesheet:True
+                })
+            }
+            function showInfo(data, Tabletop){
+                for(var i=0; i<data.length; i++){
+                $('.container').append(
+                    '<div class='card'>'+'<img src="'+ data[i].Image +'">' +
+                    '<h1>'+ data[i].Name + '</h1>' +
+                    '<p>' + data[i].EmailAddress + '</p>' +
+                    '<p>' + data[i].Branch + '</p>' +
+                    '<p>' + data[i].InstaHandle@ + '</p>' +
+                    '<p>' + data[i].Description + '</p>' +
+                    '</div>'
+                );
+                }
+            }
+            window.addEventListener('DOMContentLoaded',init);
+        </script>
+    </body>
+</html>    
