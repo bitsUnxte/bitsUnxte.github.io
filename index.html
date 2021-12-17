@@ -1,125 +1,195 @@
-<html>
-  <head></head>
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sidebar 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="/css/mystyles.css" rel="stylesheet">
+  </head>
   <body>
-    <!--
-    BEFORE RUNNING:
-    ---------------
-    1. If not already done, enable the Google Sheets API
-       and check the quota for your project at
-       https://console.developers.google.com/apis/api/sheets
-    2. Get access keys for your application. See
-       https://developers.google.com/api-client-library/javascript/start/start-js#get-access-keys-for-your-application
-    3. For additional information on authentication, see
-       https://developers.google.com/sheets/api/quickstart/js#step_2_set_up_the_sample
-    -->
-    <script>
-      function makeApiCall() {
-        var params = {
-          // The ID of the spreadsheet to retrieve data from.
-          spreadsheetId: "1W35xqmbHF5m9IRWd68JElKUYUlRWvuZi_TuzLlNkWRc", // TODO: Update placeholder value.
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4 pt-5">
+		  		<h1><a href="index.html" class="logo">Splash</a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#">Home 1</a>
+                </li>
+                <li>
+                    <a href="#">Home 2</a>
+                </li>
+                <li>
+                    <a href="#">Home 3</a>
+                </li>
+	            </ul>
+	          </li>
+	          <li>
+	              <a href="#">About</a>
+	          </li>
+	          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">Page 1</a>
+                </li>
+                <li>
+                    <a href="#">Page 2</a>
+                </li>
+                <li>
+                    <a href="#">Page 3</a>
+                </li>
+              </ul>
+	          </li>
+	          <li>
+              <a href="#">Portfolio</a>
+	          </li>
+	          <li>
+              <a href="#">Contact</a>
+	          </li>
+	        </ul>
 
-          // The A1 notation of the values to retrieve.
-          range: "Responses" // TODO: Update placeholder value.
+	        <div class="mb-5">
+						<h3 class="h6">Subscribe for newsletter</h3>
+						<form action="#" class="colorlib-subscribe-form">
+	            <div class="form-group d-flex">
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
+					</div>
 
-          // How values should be represented in the output.
-          // The default render option is ValueRenderOption.FORMATTED_VALUE.
-          //valueRenderOption: '',  // TODO: Update placeholder value.
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
 
-          // How dates, times, and durations should be represented in the output.
-          // This is ignored if value_render_option is
-          // FORMATTED_VALUE.
-          // The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
-          //dateTimeRenderOption: '',  // TODO: Update placeholder value.
-        };
+	      </div>
+    	</nav>
 
-        var request = gapi.client.sheets.spreadsheets.values.get(params);
-        request.then(
-          function(response) {
-            // TODO: Change code below to process the `response` object:
-            console.log(response.result);
-            populateSheet(response.result);
-          },
-          function(reason) {
-            console.error("error: " + reason.result.error.message);
-          }
-        );
-      }
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
 
-      function initClient() {
-        var API_KEY = "AIzaSyCU8h8O-682FodmaXoQmw7CfIJmwcI6oQQ"; // TODO: Update placeholder with desired API key.
+        <h2 class="mb-4">Sidebar #02</h2>
+        <div class="cards">
+			<div class="card">
+			  <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+			  <div class="card__content">
+				<p>
+				  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
+				</p>
+				<p>
+				  Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
+				</p>
+			  </div>
+			  <div class="card__info">
+				<div>
+				  <i class="material-icons">thumb_up</i>310
+				</div>
+				<div>
+				  <a href="./" class="card__link">View Article</a>
+				</div>
+			  </div>
+			</div>
+			<div class="card">
+			  <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+			  <div class="card__content">
+				<p>
+				  reiciendis fugit autem qui at.
+				</p>
+				<p>
+				  Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
+				</p>
+			  </div>
+			  <div class="card__info">
+				<div>
+				  <i class="material-icons">thumb_up</i>1,993
+				</div>
+				<div>
+				  <a href="./" class="card__link">View Article</a>
+				</div>
+			  </div>
+			</div>
+			<div class="card">
+			  <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
+			  <div class="card__content">
+				<p>
+				  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
+				</p>
+				<p>
+				  Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
+				</p>
+			  </div>
+			  <div class="card__info">
+				<div>
+				  <i class="material-icons">thumb_up</i>887
+				</div>
+				<div>
+				  <a href="./" class="card__link">View Article</a>
+				</div>
+			  </div>
+			</div>
+			<div class="card">
+			  <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+			  <div class="card__content">
+				<p>
+				  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
+				</p>
+				<p>
+				  Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
+				</p>
+			  </div>
+			  <div class="card__info">
+				<div>
+				  <i class="material-icons">thumb_up</i>2,512
+				</div>
+				<div>
+				  <a href="./" class="card__link">View Article</a>
+				</div>
+			  </div>
+			</div>
+			<div class="card">
+			  <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+			  <div class="card__content">
+				<p>
+				  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
+				</p>
+				<p>
+				  Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
+				</p>
+			  </div>
+			  <div class="card__info">
+				<div>
+				  <i class="material-icons">thumb_up</i>140
+				</div>
+				<div>
+				  <a href="./" class="card__link">View Article</a>
+				</div>
+			  </div>
+			</div>
+		  </div>
+      </div>
+		</div>
 
-        var CLIENT_ID =
-          "423477387603-q5l5510bejfse3l334bk9vje8chg67kk.apps.googleusercontent.com"; // TODO: Update placeholder with desired client ID.
-
-        // TODO: Authorize using one of the following scopes:
-        //   'https://www.googleapis.com/auth/drive'
-        //   'https://www.googleapis.com/auth/drive.file'
-        //   'https://www.googleapis.com/auth/drive.readonly'
-        //   'https://www.googleapis.com/auth/spreadsheets'
-        //   'https://www.googleapis.com/auth/spreadsheets.readonly'
-        var SCOPE = "https://www.googleapis.com/auth/spreadsheets.readonly";
-
-        gapi.client
-          .init({
-            apiKey: API_KEY,
-            clientId: CLIENT_ID,
-            scope: SCOPE,
-            discoveryDocs: [
-              "https://sheets.googleapis.com/$discovery/rest?version=v4"
-            ]
-          })
-          .then(function() {
-            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
-            updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-          });
-      }
-
-      function handleClientLoad() {
-        gapi.load("client:auth2", initClient);
-      }
-
-      function updateSignInStatus(isSignedIn) {
-        if (isSignedIn) {
-          makeApiCall();
-        }
-      }
-
-      function handleSignInClick(event) {
-        gapi.auth2.getAuthInstance().signIn();
-      }
-
-      function handleSignOutClick(event) {
-        gapi.auth2.getAuthInstance().signOut();
-      }
-      function populateSheet(result) {
-        for (var row = 0; row < 8; row++) {
-          for (var col = 0; col < 3; col++) {
-            document.getElementById(row + ":" + col).value =
-              result.values[row][col];
-          }
-        }
-      }
-    </script>
-    <script
-      async
-      defer
-      src="https://apis.google.com/js/api.js"
-      onload="this.onload=function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()"
-    ></script>
-    <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
-    <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
-    <div style="margin-left:auto; margin-right:auto; width:960px;">
-      <?php
-    for($row = 0; $row < 8; $row++) {
-      echo "<div style='clear:both'>"; for($col = 0; $col < 3; $col++) { echo
-      "<input
-        type="text"
-        style="float:left;"
-        name="$row:$col"
-        id="$row:$col"
-      />"; } echo "
-    </div>
-    "; } ?>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
