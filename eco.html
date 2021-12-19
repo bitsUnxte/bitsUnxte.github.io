@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>bitsUnxte</title>
+	  <link
+      id="favicon"
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/BITS_Pilani-Logo.svg/1200px-BITS_Pilani-Logo.svg.png"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="/css/mystyles.css" rel="stylesheet">
+
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4 pt-5">
+					<h1><a href="index.html" class="logo">BITS UNXTE</a></h1>
+	        <ul class="list-unstyled components mb-5">
+				<li>
+	            <a href="index.html" aria-expanded="false">Home</a>
+				</li>
+	        
+	          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Branchwise Filter</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="cs.html">BE Computer Science</a>
+                </li>
+                <li>
+                    <a href="ece.html">BE Electronics and Communication</a>
+                </li>
+                <li>
+                    <a href="eee.html">BE Electrical and Electronics</a>
+                </li>
+				<li>
+                    <a href="eni.html">BE Electronics and Instrumentation</a>
+                </li>
+				<li>
+                    <a href="mech.html">BE Mechanical</a>
+                </li>
+				<li>
+                    <a href="chem.html">BE Chemical</a>
+                </li>
+				<li>
+                    <a href="civ.html">BE Civil</a>
+                </li>
+				<li>
+                    <a href="eco.html">Msc Economics</a>
+                </li>
+				<li>
+                    <a href="math.html">Msc Maths</a>
+                </li>
+				<li>
+                    <a href="phy.html">Msc Physics</a>
+                </li>
+				<li>
+                    <a href="biosci.html">Msc Biological Sciences</a>
+                </li>
+				<li>
+                    <a href="mscchem.html">Msc Chemistry</a>
+                </li>
+              </ul>
+	          </li>
+	          <li>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScO9I4xsXXZkwMeHu3BQnxIlyGdvXyMr3bItkdmP5pLTAZtNQ/viewform?usp=sf_link">Sign Up</a>
+	          </li>
+	          <li>
+              <a href="about.html">About Us</a>
+	          </li>
+	        </ul>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+        <h2 class="mb-4">Msc Economics</h2>
+
+        <div class="cards" id="cards">
+			
+			 
+				
+			
+		</div>
+
+      </div>
+	</div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+
+
+	<script>
+		var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKOqqT5iqeAUcVsDdHBJkPNXFzZ1EMuo5TGSApsafZpQ3wcOapT2mGfyJERKULgDogu6PNDwlYbSll/pub?gid=1466443368&single=true&output=csv';
+
+		function init() {
+		Papa.parse(public_spreadsheet_url, {
+			download: true,
+			header: true,
+			complete: showInfo
+		})
+		}
+
+		window.addEventListener('DOMContentLoaded', init)
+
+		function showInfo(results) {
+			var data = results.data
+			console.log(data)
+
+			for (var i = data.length-1; i > -1; i--) {
+				console.log(data[i])
+				if (data[i]["Branch"]=="Msc Economics"){
+					createCARD(data[i])
+				}
+				
+			}
+
+		}
+		function createCARD(dataa){
+			$('.cards').append(`
+			
+						<div class="card">
+							<div class="cardimage">
+								<img src="https://drive.google.com/uc?id=${dataa["Add your best picture (less than 500kb preferred)"].substr(-33)}" alt="barbarian" />
+							</div>
+							<div class="fullname">${dataa["Name"]}</div>
+							<div class="desctags">&#8226;${dataa["Branch"]+"  &#8226;"+dataa["City"]+"  &#8226;"+dataa["Campus"]+"  &#8226;"+dataa["Year of admission"]}</div>
+							<div class="description">${dataa["About You (~30 words)"]}</div>
+							<div class="desctags">&#8226;${dataa["3 things you love to do"].toUpperCase().split(", ").join("   &#8226;")}</div>
+							<div class="footertags"><a href="https://www.instagram.com/${dataa["Insta Handle (don't use @)"]}"}>${"@"+dataa["Insta Handle @"]}</a></div>
+						</div> 
+			`)
+		}
+
+	</script>
+
+	
+  </body>
+</html>

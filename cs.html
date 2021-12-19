@@ -111,7 +111,7 @@
 
 
 	<script>
-		var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrr3LydxSWUvvFOtx4bsr73oTvXtuvvY1xfQaMX7Grmfrzw8Dz08sL7OLl1qHz_VoM7c1XaWG1jyqU/pub?gid=1466443368&single=true&output=csv';
+		var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKOqqT5iqeAUcVsDdHBJkPNXFzZ1EMuo5TGSApsafZpQ3wcOapT2mGfyJERKULgDogu6PNDwlYbSll/pub?gid=1466443368&single=true&output=csv';
 
 		function init() {
 		Papa.parse(public_spreadsheet_url, {
@@ -141,13 +141,13 @@
 			
 						<div class="card">
 							<div class="cardimage">
-								<img src="https://drive.google.com/uc?id=${dataa["Add your best picture"].substr(-33)}" alt="barbarian" />
+								<img src="https://drive.google.com/uc?id=${dataa["Add your best picture (less than 500kb preferred)"].substr(-33)}" alt="barbarian" />
 							</div>
 							<div class="fullname">${dataa["Name"]}</div>
-							<div class="desctags">&#8226;${dataa["Branch"]+"  &#8226;"+dataa["City"]+"  &#8226;"+"BPGC"+"  &#8226;"+dataa["Year of admission"]}</div>
-							<div class="description">${dataa["Description"]}</div>
-							<div class="desctags">&#8226;${dataa["3 T"].toUpperCase().split(", ").join("  &#8226;")}</div>
-							<div class="footertags"><a href="https://www.instagram.com/${dataa["Insta Handle @"]}"}>${"@"+dataa["Insta Handle @"]}</a></div>
+							<div class="desctags">&#8226;${dataa["Branch"]+"  &#8226;"+dataa["City"]+"  &#8226;"+dataa["Campus"]+"  &#8226;"+dataa["Year of admission"]}</div>
+							<div class="description">${dataa["About You (~30 words)"]}</div>
+							<div class="desctags">&#8226;${dataa["3 things you love to do"].toUpperCase().split(", ").join("   &#8226;")}</div>
+							<div class="footertags"><a href="https://www.instagram.com/${dataa["Insta Handle (don't use @)"]}"}>${"@"+dataa["Insta Handle @"]}</a></div>
 						</div> 
 			`)
 		}
