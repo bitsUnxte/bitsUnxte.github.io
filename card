@@ -25,5 +25,5 @@ The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expres
     <div class="desctags">${dataa["Branch"]+dataa["City"]+dataa["Year of admission"]}</div>
     <div class="description">${dataa["Description"]}</div>
     <div class="desctags">${dataa["3 T"]}</div>
-    <div class="footertags"><a href="https://www.instagram.com/${dataa["Insta Handle @"]}"}>${"@"+dataa["Insta Handle @"]}</a></div>
+    <div class="footertags"><a href="https://www.instagram.com/${dataa["Insta Handle (don't use @)"]}"}>${"@"+dataa["Insta Handle (don't use @)"]}</a></div>
 </div> 
