@@ -1,0 +1,29 @@
+<div class="card">
+
+<div class="cardimage">
+<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png" alt="barbarian" />
+</div>
+
+<div class="fullname">The Barbarian</div>
+
+<div class="desctags">Level 4</div>
+
+<div class="description">
+The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction. He has Killer yellow horseshoe mustache.
+</div>
+
+<div class="footertags">
+    hello hello hello
+</div>
+
+
+<div class="card">
+    <div class="cardimage">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png" alt="barbarian" />
+    </div>
+    <div class="fullname">${dataa["Name"]}</div>
+    <div class="desctags">${dataa["Branch"]+dataa["City"]+dataa["Year of admission"]}</div>
+    <div class="description">${dataa["Description"]}</div>
+    <div class="desctags">${dataa["3 T"]}</div>
+    <div class="footertags"><a href="https://www.instagram.com/${dataa["Insta Handle @"]}"}>${"@"+dataa["Insta Handle @"]}</a></div>
+</div> 
