@@ -78,10 +78,10 @@
               </ul>
 	          </li>
 	          <li>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLScO9I4xsXXZkwMeHu3BQnxIlyGdvXyMr3bItkdmP5pLTAZtNQ/viewform?usp=sf_link">Sign Up</a>
+              <a href="signup.html">Sign Up</a>
 	          </li>
 	          <li>
-              <a href="about.html">About Us</a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScO9I4xsXXZkwMeHu3BQnxIlyGdvXyMr3bItkdmP5pLTAZtNQ/viewform?usp=sf_link">About Us</a>
 	          </li>
 	        </ul>
 
@@ -91,7 +91,7 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
 
-        <h2 class="mb-4">Welcome to BITS UNXTE</h2>
+        <h2 class="mb-4">BE CS</h2>
 
         <div class="cards" id="cards">
 			
@@ -109,47 +109,6 @@
     <script src="/js/main.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
 
-
-	<script>
-		var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrr3LydxSWUvvFOtx4bsr73oTvXtuvvY1xfQaMX7Grmfrzw8Dz08sL7OLl1qHz_VoM7c1XaWG1jyqU/pub?gid=1466443368&single=true&output=csv';
-
-		function init() {
-		Papa.parse(public_spreadsheet_url, {
-			download: true,
-			header: true,
-			complete: showInfo
-		})
-		}
-
-		window.addEventListener('DOMContentLoaded', init)
-
-		function showInfo(results) {
-			var data = results.data
-			console.log(data)
-
-			for (var i = data.length-1; i > -1; i--) {
-				console.log(data[i])
-				createCARD(data[i])
-			}
-
-		}
-		function createCARD(dataa){
-			$('.cards').append(`
-			
-						<div class="card">
-							<div class="cardimage">
-								<img src="https://drive.google.com/uc?id=${dataa["Add your best picture"].substr(-33)}" alt="barbarian" />
-							</div>
-							<div class="fullname">${dataa["Name"]}</div>
-							<div class="desctags">&#8226;${dataa["Branch"]+"  &#8226;"+dataa["City"]+"  &#8226;"+"BPGC"+"  &#8226;"+dataa["Year of admission"]}</div>
-							<div class="description">${dataa["Description"]}</div>
-							<div class="desctags">&#8226;${dataa["3 T"].toUpperCase().split(", ").join("  &#8226;")}</div>
-							<div class="footertags"><a href="https://www.instagram.com/${dataa["Insta Handle @"]}"}>${"@"+dataa["Insta Handle @"]}</a></div>
-						</div> 
-			`)
-		}
-
-	</script>
 
 	
   </body>

@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+.cards {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+    font-family: sans-serif;
+    padding-top: 30px;
+}
+
+.cards * {
+    box-sizing: border-box;
+    
+}
+
+.card{
+    background: white;
+    width: 300px;
+    height: fit-content;
+    display: inline-block;
+    margin: auto;
+    border-radius: 10;
+    position: relative;
+    text-align: center;
+    box-shadow: -1px 15px 30px -12px black;
+    border-radius: 15px;
+    
+    
+}
+.cardimage{
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+}
+.cardimage img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.fullname{
+    font-size: 26px;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+.desctags{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+.description{
+    padding: 20px;
+    margin-bottom: 10px;
+    color: black;  
+}
+.footertags{
+    font-weight: 700;
+    background-color: #866ec7;
+    margin: 0;
+    margin-bottom: 0;
+    padding: 6px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #ffffff;
+
+}
+.footertags a{
+    color:white;
+}
+
+
+

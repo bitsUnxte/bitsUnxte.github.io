@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="food"></p>
+    <div class="cards">
+
+    </div>
+    <script>
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrr3LydxSWUvvFOtx4bsr73oTvXtuvvY1xfQaMX7Grmfrzw8Dz08sL7OLl1qHz_VoM7c1XaWG1jyqU/pub?gid=1466443368&single=true&output=csv';
+  
+      function init() {
+      Papa.parse(public_spreadsheet_url, {
+        download: true,
+        header: true,
+        complete: showInfo
+      })
+      }
+  
+      window.addEventListener('DOMContentLoaded', init)
+  
+      function showInfo(results) {
+        var data = results.data
+        console.log(data)
+  
+        for (var i = data.length-1; i > -1; i--) {
+          console.log(data[i])
+        }
+  
+      }
+      const products = document.querySelector(".cards");
+          let code =`
+            <div class="card">
+              <div class="cardimage">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png" alt="barbarian" />
+              </div>
+              <div class="fullname">faaaad</div>
+              <div class="desctags">Level 4</div>
+              <div class="description">The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction. He has Killer yellow horseshoe mustache.</div>
+              <div class="footertags">hello hello hello</div>
+            </div> 
+            `;
+      products.innerhtml += code;
+      
+  
+    </script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+    
+    <p><strong>This example is only going to work if it's on the internet or on a local server!</strong> To run a local server, run "terminal" or "command prompt" and run the command <code>python -m http.server</code> or <code>python -m SimpleHTTPServer</code> (whichever one works, really, and you might even need to <a href="http://littlecolumns.com/tools/python-wrangler/">install Python</a>). Then visit <a href="http://localhost:8000/">http://localhost:8000</a> and you'll be all set.</p>
+  </body>
+</html>
