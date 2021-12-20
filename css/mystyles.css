@@ -18,7 +18,7 @@
 .card{
     background: white;
     width: 300px;
-    height: fit-content;
+    height: 700px;
     display: inline-block;
     margin: auto;
     border-radius: 10;
@@ -26,6 +26,8 @@
     text-align: center;
     box-shadow: -1px 15px 30px -12px black;
     border-radius: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     
     
 }
