@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
+
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,7 +20,7 @@
 
   </head>
   <body>
-		
+
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar">
 				<div class="custom-menu">
@@ -35,7 +35,7 @@
 				<li>
 	            <a href="index.html" aria-expanded="false">Home</a>
 				</li>
-	        
+
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Branchwise Filter</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -94,13 +94,13 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
 
-        <h2 class="mb-4">BE EEE</h2>
+        <h2 class="mb-4">B.E. Electrical & Electronics</h2>
 
         <div class="cards" id="cards">
-			
-			 
-				
-			
+
+
+
+
 		</div>
 
       </div>
@@ -135,13 +135,13 @@
 				if (data[i]["Branch"]=="BE EEE"){
 					createCARD(data[i])
 				}
-				
+
 			}
 
 		}
 		function createCARD(dataa){
 			$('.cards').append(`
-			
+
 						<div class="card">
 							<div class="cardimage">
 								<img src="https://drive.google.com/uc?id=${dataa["Add your best picture (less than 500kb preferred)"].substr(-33)}" alt="barbarian" />
@@ -151,12 +151,12 @@
 							<div class="description">${dataa["About You (~30 words)"]}</div>
 							<div class="desctags">&#8226;${dataa["3 things you love to do"].toUpperCase().split(", ").join("   &#8226;")}</div>
 							<div class="footertags"><a href="https://www.instagram.com/${dataa["Insta Handle (don't use @)"]}"}>${"@"+dataa["Insta Handle (don't use @)"]}</a></div>
-						</div> 
+						</div>
 			`)
 		}
 
 	</script>
 
-	
+
   </body>
 </html>
