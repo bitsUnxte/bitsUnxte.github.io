@@ -21,6 +21,8 @@
   </head>
   <body>
 		
+	<button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
+		
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar">
 				<div class="custom-menu">
@@ -97,7 +99,62 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
 
-        <h2 class="mb-4">Msc Bio Sci</h2>
+        <div class="myheader">
+			<h1 class="mb-4">Msc Bio Sci</h1>
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width: fit-content; margin-left: auto; margin-right: auto; padding: 0; padding-left: 12px;padding-right: 12px; border-radius: 8px;">
+				
+				<ul class="navbar-nav" >
+				  <li class="nav-item" style="margin-right: 10px;">
+					<button class="fbtn factive" onclick="filterSelection('all')"> Show all</button>
+				  </li>
+				  
+			  
+				  <!-- Dropdown -->
+				  <li class="nav-item dropdown" style="margin-right: 10px; ">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: white">
+					  Campus
+					</a>
+					<div class="dropdown-menu">
+						<div id="myBtnContainer">
+						<button class="fbtn" onclick="filterSelection('BPPC')">BPPC</button>
+						<button class="fbtn" onclick="filterSelection('BPGC')">BPGC</button>
+						<button class="fbtn" onclick="filterSelection('BPHC')">BPHC</button>
+						<button class="fbtn" onclick="filterSelection('BPDC')">BPDC</button>
+						</div>
+					</div>
+				  </li>
+				  
+				  <li class="nav-item dropdown" style="margin-right: 10px;">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: white; ">
+					 Gender 
+					</a>
+					<div class="dropdown-menu">
+						<div id="myBtnContainer">
+						<button class="fbtn" onclick="filterSelection('Female')">Female</button>
+						<button class="fbtn" onclick="filterSelection('Male')">Male</button>
+						
+						</div>
+					</div>
+				  </li>
+				  <li class="nav-item dropdown" style="margin-right: 10px;">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: white">
+					  Year
+					</a>
+					<div class="dropdown-menu">
+						<div id="myBtnContainer">
+						<button class="fbtn" onclick="filterSelection('2021')">2021</button>
+						<button class="fbtn" onclick="filterSelection('2020')">2020</button>
+						<button class="fbtn" onclick="filterSelection('2019')">2019</button>
+						<button class="fbtn" onclick="filterSelection('2018')">2018</button>
+						<button class="fbtn" onclick="filterSelection('2017')">2017</button>
+						</div>
+					</div>
+				  </li>
+				</ul>
+			  </nav>
+			  <br>
+			
+		</div>
 
         <div class="cards" id="cards">
 			
@@ -113,6 +170,7 @@
     <script src="/js/popper.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/myjs.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
 
 
@@ -138,6 +196,7 @@
 				if (data[i]["Branch"]=="MSc Bio Sci"){
 					createCARD(data[i])
 				}
+				filterSelection("all");
 				
 			}
 
@@ -145,7 +204,7 @@
 		function createCARD(dataa){
 			$('.cards').append(`
 			
-						<div class="card">
+						<div class="card ${dataa["Year of admission"]+" "+dataa["Campus"]+" "+dataa["Gender"]+" "+dataa["City"].toUpperCase()}">
 							<div class="cardimage">
 								<img src="https://drive.google.com/uc?id=${dataa["Add your best picture (less than 500kb preferred)"].substr(-33)}" loading="lazy" alt="barbarian" />
 							</div>
