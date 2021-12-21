@@ -8276,6 +8276,8 @@ h1, h2, h3, h4, h5,
         transition: none; } }
     #sidebar .custom-menu .btn {
       width: 40px;
+      left: 15px;
+      top: 15px;
       height: 40px;
       position: fixed;
       border-radius: 50%; }
