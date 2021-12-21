@@ -50,7 +50,30 @@
   gtag('js', new Date());
 
   gtag('config', 'G-1ZQ6F5KTZV');
+
 </script>
+
+<script type="text/javascript">
+
+  function yHandler(){
+    var wrap = document.getElementById("wrap");
+    var contentHeight = wrap.offsetHeight;
+    var yOffset = window.pageYOffset;
+    var y = yOffset + window.innerHeight;
+    if(y>=contentHeight){
+      wrap.innerHTML += '<div class = "cards"></div>';
+    } 
+  }
+  window.onscroll = yHandler;
+
+  </script>
+
+  <style type="text/css">
+
+    div#wrap{width:800px; margin:0px auto;}
+    
+
+    </style>
 
   </head>
   <body>
