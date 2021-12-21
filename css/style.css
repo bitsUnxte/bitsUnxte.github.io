@@ -8214,7 +8214,15 @@ h1, h2, h3, h4, h5,
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  position: fixed; z-index: 99; height: 100%; }
+  
+  position: fixed; z-index: 99; height: 100%;
+  overflow-y: scroll;
+ }
+ ::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+ 
   #sidebar .h6 {
     color: #fff; }
   #sidebar.active {
@@ -8269,6 +8277,7 @@ h1, h2, h3, h4, h5,
     #sidebar .custom-menu .btn {
       width: 40px;
       height: 40px;
+      position: fixed;
       border-radius: 50%; }
       #sidebar .custom-menu .btn.btn-primary {
         background: #6749b9;
@@ -8300,6 +8309,8 @@ a[data-toggle="collapse"] {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; }
+
+
 
 .btn.btn-primary {
   background: #866ec7;
