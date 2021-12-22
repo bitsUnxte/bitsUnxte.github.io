@@ -123,8 +123,8 @@
   
   /* Add a dark background to the active button */
   .fbtn.factive {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: #866ec7;
+    color: #ffffff;
     
   }
 
