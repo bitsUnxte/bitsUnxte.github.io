@@ -56,35 +56,22 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-// Add active class to the current control button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("fbtn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("factive");
-    current[0].className = current[0].className.replace(" factive", "");
-    this.className += " factive";
-  });
-}
-
-var coll = document.getElementsByClassName("mycollapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
 // Close the dropdown if the user clicks outside of it
+
+function searchfunc() {
+  var cardss, i;
+  cardss = document.getElementsByClassName("card");
+  var input, filter, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+  
+  for (i = 0; i < cardss.length; i++) {
+      txtValue = cardss[i].className + " "+ cardss[i].getElementsByClassName("fullname")[0].innerHTML +" "+cardss[i].getElementsByClassName("desctags")[1].innerHTML;
+      console.log(txtValue)
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          cardss[i].style.display = "";
+      } else {
+          cardss[i].style.display = "none";
+      }
+  }
+}
