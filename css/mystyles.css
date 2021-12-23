@@ -28,8 +28,36 @@
     border-radius: 15px;
     display: none;
     transition: transform .5s ease;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
     
     
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .card:hover {
@@ -44,6 +72,7 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     
+    
 }
 .cardimage img{
     object-fit: cover;
@@ -51,6 +80,7 @@
     width: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    
 }
 .fullname{
     font-size: 26px;
