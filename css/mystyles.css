@@ -181,7 +181,7 @@
 
 
 .dropdown.items {
-  padding: 2px;
+  padding: 10px;
   display: none;
   margin: 0;
   border: 1px solid #ccc;
@@ -206,7 +206,7 @@
   font-size: 16px;  
   border: none;
   outline: none;
-  color: black;
+  color: white;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -221,6 +221,8 @@
   z-index: 1;
   width: fit-content;
   text-align: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: black;
 }
 ol, ul, dl{
   padding: 10px;
@@ -245,21 +247,30 @@ ol, ul, dl{
 
 .topnav {
   overflow: hidden;
-  background-color: #e9e9e9;
+  background-color: #6749b9;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+
 }
 
 .topnav .search-container {
   float: right;
+  width: 300px;
+  margin-right: 10px;
+  margin-left: 40px;
 }
 
 .topnav input[type=text] {
@@ -267,8 +278,9 @@ ol, ul, dl{
   margin-top: 8px;
   font-size: 17px;
   border: none;
-  margin-right: 10px;
+  
   border-radius: 10px;
+  width: 100%;
 }
 
 .topnav .search-container button {
@@ -285,10 +297,18 @@ ol, ul, dl{
 .topnav .search-container button:hover {
   background: #ccc;
 }
+input[type="checkbox"]{
+  margin: 5px;
+  
+}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 858px) {
   .topnav .search-container {
     float: none;
+    margin-right: 0px;
+    width: 100%;
+    padding: 10px;
+    margin-left: 0px;
   }
   .topnav a, .topnav input[type=text], .topnav .search-container button {
     float: none;
@@ -296,9 +316,13 @@ ol, ul, dl{
     text-align: left;
     width: 100%;
     margin: 0;
-    padding: 14px;
+    padding: 6px;
   }
   .topnav input[type=text] {
     border: 1px solid #ccc;  
   }
+  .dropdown .dropbtn {
+    padding: 15px 9px;
+    
+}
 }

@@ -17,17 +17,88 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-filterSelection("all");
+// JavaScript program to find whether an array
+// is subset of another array
+  
+    /* Return true if arr2[] is a subset 
+    of arr1[] */
+    function isSubset(arr1, arr2){
+        let m = arr1.length;
+        let n = arr2.length;
+        let i = 0;
+        let j = 0;
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < m; j++)
+                if (arr2[i] == arr1[j])
+                    break;
+  
+            /* If the above inner loop 
+            was not broken at all then
+            arr2[i] is not present in
+            arr1[] */
+            if (j == m)
+                return false;
+        }
+  
+        /* If we reach here then all
+        elements of arr2[] are present
+        in arr1[] */
+        return true;
+    }
 
+
+
+
+function checkboxreturn(){
+  var checkboxarr;
+  var options;
+  checkboxarr = []
+  options = document.getElementsByClassName('fcheckbox');
+  for (i=0; i < options.length; i++){
+    
+    if (options[i].checked == true){
+      
+        checkboxarr.push(options[i].value);
+      
+    }
+    else{
+      const index = checkboxarr.indexOf(options[i].value);
+      if (index > -1) {
+        array.splice(index, 1);
+      }
+    }
+  }
+  return checkboxarr
+
+}
 
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("card");
-  if (c == "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    if (isSubset(x[i].className.split(" "),c)){
+      w3AddClass(x[i], "show")
+    } 
+    else{
+      w3RemoveClass(x[i], "show")
+    }
+  }
+}
+function checkboxupdate(){
+  filterSelection(checkboxreturn());
+}
+function showall(){
+  var x, i;
+  x = document.getElementsByClassName("card");
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++){
+    w3AddClass(x[i], "show");
+  }
+  var options;
+  options = document.getElementsByClassName('fcheckbox');
+  for (i=0; i < options.length; i++){
+    options[i].checked = false;
   }
 }
 

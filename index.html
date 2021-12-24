@@ -124,7 +124,7 @@
 			
 			<div class="topnav">
 				<div class="dropdown">
-					<button class="dropbtn" onclick="filterSelection('all')"> Show all</button>
+					<button class="dropbtn" onclick="showall()"> Show all</button>
 				</div>
 				
 				<div class="dropdown">
@@ -133,10 +133,10 @@
 				  </button>
 				  <div class="dropdown-content">
 				  <ul class="items">
-				   <li><input type="checkbox">BPPC</input></li>
-				   <li><input type="checkbox">BPGC</input></li>
-				   <li><input type="checkbox">BPHC</input></li>
-				   <li><input type="checkbox">BPDC</input></li>
+					<li><input class="fcheckbox" value="BPPC" type="checkbox" onclick="checkboxupdate()">BPPC</input></li>
+					<li><input class="fcheckbox" value="BPGC" type="checkbox" onclick="checkboxupdate()">BPGC</input></li>
+					<li><input class="fcheckbox" value="BPHC" type="checkbox" onclick="checkboxupdate()">BPHC</input></li>
+					<li><input class="fcheckbox" value="BPDC" type="checkbox" onclick="checkboxupdate()">BPDC</input></li>
 				  </ul>
 				  </div>
 				</div>
@@ -146,10 +146,9 @@
 				  </button>
 				  <div class="dropdown-content">
 				  <ul class="items">
-				   <li><input type="checkbox">Male</input></li>
-				   <li><input type="checkbox">Female</input></li>
-				   <li><input type="checkbox">Other</input></li>
-				   <li><input type="checkbox">Prefer not say</input></li>
+				   <li><input class="fcheckbox" value="Male" type="checkbox" onclick="checkboxupdate()">Male</input></li>
+				   <li><input class="fcheckbox" value="Female" type="checkbox" onclick="checkboxupdate()">Female</input></li>
+				   
 				  </ul>
 				  </div>
 				</div>
@@ -159,13 +158,13 @@
 					</button>
 					<div class="dropdown-content">
 					<ul class="items">
-					 <li><input type="checkbox">2021</input></li>
-					 <li><input type="checkbox">2020</input></li>
-					 <li><input type="checkbox">2019</input></li>
-					 <li><input type="checkbox">2018</input></li>
-					 <li><input type="checkbox">2017</input></li>
-					 <li><input type="checkbox">2016</input></li>
-					 <li><input type="checkbox">2015</input></li>
+					 <li><input class="fcheckbox" value="2021" type="checkbox" onclick="checkboxupdate()">2021</input></li>
+					 <li><input class="fcheckbox" value="2020" type="checkbox" onclick="checkboxupdate()">2020</input></li>
+					 <li><input class="fcheckbox" value="2019" type="checkbox" onclick="checkboxupdate()">2019</input></li>
+					 <li><input class="fcheckbox" value="2018" type="checkbox" onclick="checkboxupdate()">2018</input></li>
+					 <li><input class="fcheckbox" value="2017" type="checkbox" onclick="checkboxupdate()">2017</input></li>
+					 <li><input class="fcheckbox" value="2016" type="checkbox" onclick="checkboxupdate()">2016</input></li>
+					 <li><input class="fcheckbox" value="2015" type="checkbox" onclick="checkboxupdate()">2015</input></li>
 					</ul>
 					</div>
 				  </div>
