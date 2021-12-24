@@ -17,17 +17,88 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-filterSelection("all");
+// JavaScript program to find whether an array
+// is subset of another array
+  
+    /* Return true if arr2[] is a subset 
+    of arr1[] */
+    function isSubset(arr1, arr2){
+        let m = arr1.length;
+        let n = arr2.length;
+        let i = 0;
+        let j = 0;
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < m; j++)
+                if (arr2[i] == arr1[j])
+                    break;
+  
+            /* If the above inner loop 
+            was not broken at all then
+            arr2[i] is not present in
+            arr1[] */
+            if (j == m)
+                return false;
+        }
+  
+        /* If we reach here then all
+        elements of arr2[] are present
+        in arr1[] */
+        return true;
+    }
 
+
+
+
+function checkboxreturn(){
+  var checkboxarr;
+  var options;
+  checkboxarr = []
+  options = document.getElementsByClassName('fcheckbox');
+  for (i=0; i < options.length; i++){
+    
+    if (options[i].checked == true){
+      
+        checkboxarr.push(options[i].value);
+      
+    }
+    else{
+      const index = checkboxarr.indexOf(options[i].value);
+      if (index > -1) {
+        array.splice(index, 1);
+      }
+    }
+  }
+  return checkboxarr
+
+}
 
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("card");
-  if (c == "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    if (isSubset(x[i].className.split(" "),c)){
+      w3AddClass(x[i], "show")
+    } 
+    else{
+      w3RemoveClass(x[i], "show")
+    }
+  }
+}
+function checkboxupdate(){
+  filterSelection(checkboxreturn());
+}
+function showall(){
+  var x, i;
+  x = document.getElementsByClassName("card");
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++){
+    w3AddClass(x[i], "show");
+  }
+  var options;
+  options = document.getElementsByClassName('fcheckbox');
+  for (i=0; i < options.length; i++){
+    options[i].checked = false;
   }
 }
 
@@ -56,35 +127,22 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-// Add active class to the current control button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("fbtn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("factive");
-    current[0].className = current[0].className.replace(" factive", "");
-    this.className += " factive";
-  });
-}
-
-var coll = document.getElementsByClassName("mycollapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
 // Close the dropdown if the user clicks outside of it
+
+function searchfunc() {
+  var cardss, i;
+  cardss = document.getElementsByClassName("card");
+  var input, filter, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+  
+  for (i = 0; i < cardss.length; i++) {
+      txtValue = cardss[i].className + " "+ cardss[i].getElementsByClassName("fullname")[0].innerHTML +" "+cardss[i].getElementsByClassName("desctags")[1].innerHTML;
+      console.log(txtValue)
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          cardss[i].style.display = "";
+      } else {
+          cardss[i].style.display = "none";
+      }
+  }
+}
