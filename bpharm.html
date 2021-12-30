@@ -149,7 +149,7 @@
 				  </div>
 				<div class="search-container">
 				  <form action="javascript:void(0);">
-					<input type="text" id="myInput" onkeyup="searchfunc()" placeholder="Name/City/Interests..." title="Type in a name">
+					<input type="text" id="myInput" onkeyup="searchfunc()" placeholder="Name/City/Interests/Hostel..." title="Type in a name">
 				  </form>
 				</div>
 			  </div>
@@ -210,9 +210,10 @@
 								<img src="https://drive.google.com/uc?id=${dataa["Add your best picture (less than 500kb preferred)"].substr(-33)}" loading="lazy" alt="barbarian" />
 							</div>
 							<div class="fullname">${dataa["Name"]}</div>
-							<div class="desctags">&#8226;${dataa["Branch"]+"  &#8226;"+dataa["City"]+"  &#8226;"+dataa["Campus"]+"  &#8226;"+dataa["Year of admission"]}</div>
+							<div class="desctags maintags">&#8226;${dataa["Branch"]+"  &#8226;"+dataa["City"]+"  &#8226;"+dataa["Campus"]+"  &#8226;"+dataa["Year of admission"]}</div>
+							${hostelInfo(dataa)}
 							<div class="description">${dataa["About You (~30 words)"]}</div>
-							<div class="desctags">&#8226;${dataa["3 things you love to do"].toUpperCase().split(", ").join("   &#8226;")}</div>
+							<div class="desctags interests">&#8226;${dataa["3 things you love to do"].toUpperCase().split(", ").join("   &#8226;")}</div>
 							<div class="footertags"><a href="https://www.instagram.com/${dataa["Insta Handle (don't use @)"]}" target="blank"}>${"@"+dataa["Insta Handle (don't use @)"]}</a></div>
 						</div> 
 			`)
