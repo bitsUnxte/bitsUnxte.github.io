@@ -245,6 +245,13 @@ ol, ul, dl{
   display: block;
 }
 
+input[type="radio"], input[type="checkbox"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px;
+  margin-right: 5px;
+}
+
 .topnav {
   overflow: hidden;
   background-color: #6749b9;
