@@ -137,12 +137,34 @@ function searchfunc() {
     filter = input.value.toUpperCase();
   
   for (i = 0; i < cardss.length; i++) {
-      txtValue = cardss[i].className + " "+ cardss[i].getElementsByClassName("fullname")[0].innerHTML +" "+cardss[i].getElementsByClassName("desctags")[1].innerHTML;
-      console.log(txtValue)
+      txtValue = cardss[i].className + " "+ cardss[i].getElementsByClassName("fullname")[0].innerHTML +" "+cardss[i].getElementsByClassName("interests")[0].innerHTML+" "+hostelInfosearch(cardss[i]);
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
           cardss[i].style.display = "";
       } else {
           cardss[i].style.display = "none";
       }
+  }
+}
+
+
+function hostelInfo(dataa) {
+  if(dataa["Hostel"]!== ""){
+    var divtxt;
+    divtxt = `<div class="desctags hostel">`+dataa["Room No."]+ ", "+dataa["Hostel"]+`</div>`
+    return divtxt;
+  }
+  else{
+    return ""
+  }
+}
+
+function hostelInfosearch(dataa) {
+  if(dataa.getElementsByClassName("hostel")[0]!== undefined){
+    var divtxt;
+    divtxt = dataa.getElementsByClassName("hostel")[0].innerHTML
+    return divtxt;
+  }
+  else{
+    return ""
   }
 }
