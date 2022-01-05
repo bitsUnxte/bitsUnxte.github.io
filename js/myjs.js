@@ -174,7 +174,7 @@ function createCARD(dataa){
   
         <div class="card ${dataa["Year of admission"]+" "+dataa["Campus"]+" "+dataa["Gender"]+" "+dataa["City"].toUpperCase()} show">
           <div class="cardimage">
-            <img src="https://drive.google.com/uc?id=${dataa["Add your best picture (less than 500kb preferred)"].substr(-33)}" loading="lazy" alt="barbarian" />
+            <img src="https://drive.google.com/uc?id=${dataa["Add your best picture (less than 500kb preferred)"].substr(-33)}" loading="lazy" alt="please use chrome/firefox" />
           </div>
           <div class="fullname">${dataa["Name"]}</div>
           <div class="desctags maintags">&#8226;${dataa["Branch"]+"  &#8226;"+dataa["City"]+"  &#8226;"+dataa["Campus"]+"  &#8226;"+dataa["Year of admission"]}</div>
