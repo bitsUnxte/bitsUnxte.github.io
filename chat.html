@@ -17,6 +17,15 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="/css/mystyles.css" rel="stylesheet">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZQ6F5KTZV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1ZQ6F5KTZV');
+</script>
 
   </head>
   <body>
@@ -89,12 +98,14 @@
 	          <li>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLScO9I4xsXXZkwMeHu3BQnxIlyGdvXyMr3bItkdmP5pLTAZtNQ/viewform?usp=sf_link">Sign Up</a>
 	          </li>
+              
 	          <li>
                 <a href="chat.html">Chat Room</a>
                 </li>
 	          <li>
               <a href="about.html">About Us</a>
-	          </li>	        </ul>
+	          </li>
+	        </ul>
 
 	      </div>
     	</nav>
@@ -103,69 +114,13 @@
       <div id="content" class="p-4 p-md-5 pt-5">
 
         <div class="myheader">
-			<h1 class="mb-4">BE Manufacturing</h1>
-			<div class="topnav">
-				<div class="dropdown">
-					<button class="dropbtn" onclick="showall()"> Show all</button>
-				</div>
-				
-				<div class="dropdown">
-				  <button class="dropbtn">Campus
-					<i class="fa fa-caret-down"></i>
-				  </button>
-				  <div class="dropdown-content">
-				  <ul class="items">
-					<li><input class="fcheckbox" value="BPPC" type="radio" name="campus" onclick="checkboxupdate()">BPPC</input></li>
-					<li><input class="fcheckbox" value="BPGC" type="radio" name="campus" onclick="checkboxupdate()">BPGC</input></li>
-					<li><input class="fcheckbox" value="BPHC" type="radio" name="campus" onclick="checkboxupdate()">BPHC</input></li>
-					<li><input class="fcheckbox" value="BPDC" type="radio" name="campus" onclick="checkboxupdate()">BPDC</input></li>
-				  </ul>
-				  </div>
-				</div>
-				<div class="dropdown">
-				  <button class="dropbtn">Gender
-					<i class="fa fa-caret-down"></i>
-				  </button>
-				  <div class="dropdown-content">
-				  <ul class="items">
-				   <li><input class="fcheckbox" name="gender" value="Male" type="radio" onclick="checkboxupdate()">Male</input></li>
-				   <li><input class="fcheckbox" name="gender" value="Female" type="radio" onclick="checkboxupdate()">Female</input></li>
-				   
-				  </ul>
-				  </div>
-				</div>
-				<div class="dropdown">
-					<button class="dropbtn">Year
-					  <i class="fa fa-caret-down"></i>
-					</button>
-					<div class="dropdown-content">
-					<ul class="items">
-					 <li><input class="fcheckbox" value="2021" name="year" type="radio" onclick="checkboxupdate()">2021</input></li>
-					 <li><input class="fcheckbox" value="2020" name="year" type="radio" onclick="checkboxupdate()">2020</input></li>
-					 <li><input class="fcheckbox" value="2019" name="year" type="radio" onclick="checkboxupdate()">2019</input></li>
-					 <li><input class="fcheckbox" value="2018" name="year" type="radio" onclick="checkboxupdate()">2018</input></li>
-					 <li><input class="fcheckbox" value="2017" name="year" type="radio" onclick="checkboxupdate()">2017</input></li>
-					 <li><input class="fcheckbox" value="2016" name="year" type="radio" onclick="checkboxupdate()">2016</input></li>
-					 <li><input class="fcheckbox" value="2015" name="year" type="radio" onclick="checkboxupdate()">2015</input></li>
-					</ul>
-					</div>
-				  </div>
-				<div class="search-container">
-				  <form action="javascript:void(0);">
-					<input type="text" id="myInput" onkeyup="searchfunc()" placeholder="Name/City/Interests/Hostel..." title="Type in a name">
-				  </form>
-				</div>
-			  </div>
-			
-		</div>
+			<h1 class="mb-4">CHAT ROOM</h1>
+        </div>
+        <div class="chatroom">
+            <script id="cid0020000302530027141" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 100%;height: 100%;">{"handle":"bitsunxtechatroom","arch":"js","styles":{"a":"6749b9","b":100,"c":"000000","d":"000000","k":"6749b9","l":"6749b9","m":"6749b9","p":"10","q":"6749b9","r":100,"surl":0,"cnrs":"0.35","fwtickm":1}}</script>
 
-        <div class="cards" id="cards">
+      </div>
 			
-			 
-				
-			
-		</div>
-
       </div>
 	</div>
 
@@ -177,24 +132,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
 
 
-	<script>
-		
-
-		function showInfo(results) {
-			var data = results.data
-			
-
-			for (var i = data.length-1; i > -1; i--) {
-				
-				if (data[i]["Branch"]=="BE Manufacturing"){
-					createCARD(data[i])
-				}
-				
-			}
-
-		}
-		
-	</script>
+	
 
 	
   </body>
