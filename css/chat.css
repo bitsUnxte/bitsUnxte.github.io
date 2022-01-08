@@ -74,6 +74,16 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .chatroom {
+    margin-left: auto;
+    margin-right: auto;
+    height: 90%;
+    width: 60%;
+  }
+  .cchat{
+    display: none;
+  }
+
   
   /* Change styles for cancel button and signup button on extra small screens */
   @media screen and (max-width: 858px) {
@@ -85,12 +95,3 @@
    }
   }
 
-  .chatroom {
-    margin-left: auto;
-    margin-right: auto;
-    height: 90%;
-    width: 60%;
-  }
-  .cchat{
-    display: none;
-  }
