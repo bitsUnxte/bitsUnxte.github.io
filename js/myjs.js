@@ -197,3 +197,5 @@ var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR
 		}
 
 		window.addEventListener('DOMContentLoaded', init)
+
+    
