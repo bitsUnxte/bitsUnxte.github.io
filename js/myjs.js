@@ -185,6 +185,16 @@ function createCARD(dataa){
         </div> 
   `)
 }
+function emailcheck(data, email){
+  for (var i = data.length-1; i > -1; i--) {		
+    if (data[i]["Email Address"]==email){
+      return true
+      
+    }
+    
+  }
+
+}
 
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKOqqT5iqeAUcVsDdHBJkPNXFzZ1EMuo5TGSApsafZpQ3wcOapT2mGfyJERKULgDogu6PNDwlYbSll/pub?gid=1466443368&single=true&output=csv';
 
@@ -197,5 +207,12 @@ var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR
 		}
 
 		window.addEventListener('DOMContentLoaded', init)
+
+var carddata;
+function showInfo(results) {
+  var data = results.data
+  window.carddata = data
+  
+}
 
     
