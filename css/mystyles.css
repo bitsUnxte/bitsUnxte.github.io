@@ -1,11 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
 
-.chatroom {
-  margin-left: auto;
-  margin-right: auto;
-  height: 90%;
-  width: 60%;
-}
+
+
 
 
 .cards {
@@ -319,11 +315,9 @@ input[type="checkbox"]{
 }
 
 @media screen and (max-width: 858px) {
-
   .chatroom{
     width:100%;
   }
-
   .topnav .search-container {
     float: none;
     margin-right: 0px;
@@ -347,3 +341,4 @@ input[type="checkbox"]{
     
 }
 }
+
